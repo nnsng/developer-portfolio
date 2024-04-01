@@ -56,6 +56,7 @@ import premierepro from '/public/svg/skills/premierepro.svg'
 import python from '/public/svg/skills/python.svg'
 import pytorch from '/public/svg/skills/pytorch.svg'
 import react from '/public/svg/skills/react.svg'
+import redux from '/public/svg/skills/redux.svg'
 import ruby from '/public/svg/skills/ruby.svg'
 import selenium from '/public/svg/skills/selenium.svg'
 import sketch from '/public/svg/skills/sketch.svg'
@@ -102,6 +103,8 @@ export const skillsImage = (skill: string) => {
       return nuxtJS
     case 'react':
       return react
+    case 'redux':
+      return redux
     case 'svelte':
       return svelte
     case 'typescript':

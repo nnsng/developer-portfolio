@@ -16,7 +16,7 @@ const CONFIG = {
   opacity: 0,
 }
 
-const GlowCard = ({ children, identifier }: GlowCardProps) => {
+function GlowCard({ children, identifier }: GlowCardProps) {
   useEffect(() => {
     const container = document.querySelector<HTMLElement>(`.glow-container-${identifier}`)!
     const cards = Array.from(document.querySelectorAll<HTMLElement>(`.glow-card-${identifier}`))

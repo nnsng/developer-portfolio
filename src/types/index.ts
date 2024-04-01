@@ -16,12 +16,12 @@ export type Project = {
   tools: string[]
   role: string
   code: string
+  tags: string[]
+  features: string[]
   demo: string
   image: {
     src: string
   }
-  tags?: string[]
-  features?: string[]
 }
 
 export type Education = {
@@ -36,4 +36,25 @@ export type Experience = {
   title: string
   company: string
   duration: string
+}
+
+export type Contact = {
+  email: string
+  phone: string
+  address: string
+  github: string
+  facebook?: string
+  linkedIn?: string
+  twitter?: string
+  stackOverflow?: string
+  devUsername?: string
+}
+
+export type Personal = Contact & {
+  name: string
+  profile: string
+  designation: string
+  description: string
+  leetcode?: string
+  resume?: string
 }

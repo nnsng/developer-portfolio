@@ -6,7 +6,7 @@ type AnimationLottieProps = {
   animationPath: LottieComponentProps['animationData']
 }
 
-const AnimationLottie = ({ animationPath }: AnimationLottieProps) => {
+function AnimationLottie({ animationPath }: AnimationLottieProps) {
   const defaultOptions: LottieComponentProps = {
     loop: true,
     autoplay: true,

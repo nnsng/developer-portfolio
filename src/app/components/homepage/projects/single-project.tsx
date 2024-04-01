@@ -8,7 +8,7 @@ type SingleProjectProps = {
   project: Project
 }
 
-const SingleProject = ({ project }: SingleProjectProps) => {
+function SingleProject({ project }: SingleProjectProps) {
   const { name, description, tags, code, demo, image, features } = project
 
   return (
@@ -209,7 +209,7 @@ const SingleProject = ({ project }: SingleProjectProps) => {
         {description}
       </p>
       <div className="absolute bottom-4 right-0 flex w-[140px] translate-x-full flex-col justify-center gap-2 rounded-[10px_0_0_10px] bg-[#0f0b24] p-[0.825rem] text-[0.8rem] text-[#EFF3F4] transition-transform delay-[0.3s] duration-[0.5s] group-hover:translate-x-0">
-        {tags?.map((tag, id) => (
+        {tags.map((tag, id) => (
           <span className="break-words text-xs font-medium" key={id}>
             {tag}
           </span>

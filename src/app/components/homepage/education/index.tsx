@@ -35,13 +35,13 @@ function Education() {
       <div className="py-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
           <div className="flex items-start justify-center">
-            <div className="h-3/4 w-3/4">
+            <div className="flex h-full w-3/4">
               <AnimationLottie animationPath={lottieFile} />
             </div>
           </div>
 
           <div>
-            <div className="flex flex-col gap-6">
+            <div className="flex h-full flex-col justify-center gap-6">
               {educations.map((education) => (
                 <GlowCard key={education.id} identifier={`education-${education.id}`}>
                   <div className="relative p-3 text-white">

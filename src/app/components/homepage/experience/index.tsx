@@ -29,13 +29,13 @@ function Experience() {
       <div className="py-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
           <div className="flex items-start justify-center">
-            <div className="h-full w-full">
+            <div className="flex h-full w-full">
               <AnimationLottie animationPath={experience} />
             </div>
           </div>
 
           <div>
-            <div className="flex flex-col gap-6">
+            <div className="flex h-full flex-col justify-center gap-6">
               {experiences.map((experience) => (
                 <GlowCard key={experience.id} identifier={`experience-${experience.id}`}>
                   <div className="relative p-3">

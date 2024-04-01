@@ -1,7 +1,7 @@
-import { projectsData } from '@/utils/data/projects-data'
+import { projectsData } from '@/utils/data/projects'
 import ProjectCard from './project-card'
 
-const Projects = () => {
+function Projects() {
   return (
     <div id="projects" className="relative z-50  my-12 lg:my-24">
       <div className="sticky top-10">
