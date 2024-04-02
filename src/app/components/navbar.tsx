@@ -1,7 +1,10 @@
+import { getBlogData } from '@/services/getBlogData'
 import { personalData } from '@/utils/data/personal'
 import Link from 'next/link'
 
-function Navbar() {
+async function Navbar() {
+  const blogs = await getBlogData()
+
   return (
     <nav className="bg-transparent">
       <div className="flex items-center justify-between py-5">
@@ -31,7 +34,7 @@ function Navbar() {
               href="#experience"
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                EXPERIENCE
+                EXPERIENCES
               </div>
             </a>
           </li>
@@ -51,20 +54,22 @@ function Navbar() {
               href="#education"
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                EDUCATION
+                EDUCATIONS
               </div>
             </a>
           </li>
-          <li>
-            <a
-              className="block px-4 py-2 no-underline outline-none hover:no-underline"
-              href="#blogs"
-            >
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                BLOGS
-              </div>
-            </a>
-          </li>
+          {blogs.length > 0 && (
+            <li>
+              <a
+                className="block px-4 py-2 no-underline outline-none hover:no-underline"
+                href="#blogs"
+              >
+                <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
+                  BLOGS
+                </div>
+              </a>
+            </li>
+          )}
           <li>
             <a
               className="block px-4 py-2 no-underline outline-none hover:no-underline"

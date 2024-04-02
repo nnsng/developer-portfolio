@@ -1,4 +1,7 @@
 import { personalData } from '@/utils/data/personal'
+import { Fragment } from 'react'
+
+const skills = ['HTML', 'CSS', 'Javascript', 'Typescript', 'React', 'Redux', 'Express', 'Git']
 
 function CoderObject() {
   return (
@@ -31,23 +34,12 @@ function CoderObject() {
           <div className="ml-4 mr-2 lg:ml-8">
             <span className=" text-white">skills:</span>
             <span className="text-gray-400">{`['`}</span>
-            <span className="text-amber-300">React</span>
-            <span className="text-gray-400">{"', '"}</span>
-            <span className="text-amber-300">NextJS</span>
-            <span className="text-gray-400">{"', '"}</span>
-            <span className="text-amber-300">Redux</span>
-            <span className="text-gray-400">{"', '"}</span>
-            <span className="text-amber-300">Express</span>
-            <span className="text-gray-400">{"', '"}</span>
-            <span className="text-amber-300">NestJS</span>
-            <span className="text-gray-400">{"', '"}</span>
-            <span className="text-amber-300">MySql</span>
-            <span className="text-gray-400">{"', '"}</span>
-            <span className="text-amber-300">MongoDB</span>
-            <span className="text-gray-400">{"', '"}</span>
-            <span className="text-amber-300">Docker</span>
-            <span className="text-gray-400">{"', '"}</span>
-            <span className="text-amber-300">AWS</span>
+            {skills.map((skill, idx) => (
+              <Fragment key={idx}>
+                {idx > 0 && <span className="text-gray-400">{"', '"}</span>}
+                <span className="text-amber-300">{skill}</span>
+              </Fragment>
+            ))}
             <span className="text-gray-400">{"'],"}</span>
           </div>
           <div>

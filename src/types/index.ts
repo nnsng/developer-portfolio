@@ -45,7 +45,6 @@ export type Contact = {
   github: string
   facebook?: string
   linkedIn?: string
-  twitter?: string
   stackOverflow?: string
   devUsername?: string
 }

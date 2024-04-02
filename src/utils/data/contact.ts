@@ -7,7 +7,6 @@ export const contactData: Contact = {
   github: 'https://github.com/nnsng',
   facebook: 'https://www.facebook.com/',
   linkedIn: 'https://www.linkedin.com/in/sangngocnguyen',
-  twitter: 'https://twitter.com/',
   stackOverflow: 'https://stackoverflow.com/',
   devUsername: 'nguyenngocsang',
 }

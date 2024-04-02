@@ -2,7 +2,7 @@ import { personalData } from '@/utils/data/personal'
 import Image from 'next/image'
 import Link from 'next/link'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
-import { FaFacebook, FaTwitterSquare } from 'react-icons/fa'
+import { FaFacebook } from 'react-icons/fa'
 import { MdDownload } from 'react-icons/md'
 import { RiContactsFill } from 'react-icons/ri'
 import { SiLeetcode } from 'react-icons/si'
@@ -24,7 +24,7 @@ function HeroSection() {
           <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
             Hello, <br />
             This is <span className=" text-pink-500">{personalData.name.toUpperCase()}</span>
-            {` , I'm a Professional `}
+            {`, I'm a Professional `}
             <span className=" text-[#16f2b3]">{personalData.designation}</span>.
           </h1>
 
@@ -63,15 +63,6 @@ function HeroSection() {
                 className="text-pink-500 transition-all duration-300 hover:scale-125"
               >
                 <SiLeetcode size={30} />
-              </Link>
-            )}
-            {personalData.twitter && (
-              <Link
-                href={personalData.twitter}
-                target="_blank"
-                className="text-pink-500 transition-all duration-300 hover:scale-125"
-              >
-                <FaTwitterSquare size={30} />
               </Link>
             )}
           </div>
