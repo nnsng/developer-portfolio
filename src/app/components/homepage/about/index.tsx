@@ -21,7 +21,7 @@ function AboutSection() {
             width={280}
             height={280}
             alt={personalData.name}
-            className="cursor-pointer rounded-lg grayscale transition-all duration-1000 hover:scale-110 hover:grayscale-0"
+            className="aspect-square w-[unset] cursor-pointer rounded-lg grayscale transition-all duration-1000 hover:scale-110 hover:grayscale-0"
           />
         </div>
       </div>
