@@ -1,6 +1,7 @@
 'use client'
 
 import { isValidEmail } from '@/utils/check-email'
+import { env } from '@/utils/env'
 import emailjs from '@emailjs/browser'
 import { useState, type MouseEvent } from 'react'
 import { TbMailForward } from 'react-icons/tb'
@@ -34,9 +35,9 @@ function ContactForm() {
       setError({ ...error, required: false })
     }
 
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || ''
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || ''
-    const options = { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }
+    const serviceID = env('NEXT_PUBLIC_EMAILJS_SERVICE_ID')
+    const templateID = env('NEXT_PUBLIC_EMAILJS_TEMPLATE_ID')
+    const options = { publicKey: env('NEXT_PUBLIC_EMAILJS_PUBLIC_KEY') }
 
     try {
       const res = await emailjs.send(serviceID, templateID, input, options)
