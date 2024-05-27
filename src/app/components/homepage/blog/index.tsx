@@ -1,17 +1,17 @@
-import type { Blog as TBlog } from '@/types'
+import type { Blog } from '@/types'
 import Link from 'next/link'
 import { FaArrowRight } from 'react-icons/fa'
 import BlogCard from './blog-card'
-
-type BlogProps = {
-  blogs: TBlog[]
-}
+import { getBlogData } from '@/services/getBlogData'
 
 const MAX_BLOGS = 6
 
-function Blog({ blogs }: BlogProps) {
+async function BlogSection() {
+  const blogs = await getBlogData()
+  if (blogs.length === 0) return null
+
   return (
-    <div id="blogs" className="relative z-50 my-12 border-t border-[#25213b] lg:my-24">
+    <div id="blog" className="relative z-50 my-12 border-t border-[#25213b] lg:my-24">
       <div className="absolute left-[42%] top-6 h-[100px] w-[100px] translate-x-1/2 rounded-full bg-violet-100 opacity-20 blur-3xl  filter"></div>
 
       <div className="flex -translate-y-[1px] justify-center">
@@ -21,9 +21,11 @@ function Blog({ blogs }: BlogProps) {
       </div>
 
       <div className="my-5 flex justify-center lg:py-8">
-        <div className="flex  items-center">
+        <div className="flex items-center">
           <span className="h-[2px] w-24 bg-[#1a1443]"></span>
-          <span className="w-fit rounded-md bg-[#1a1443] p-2 px-5 text-xl text-white">Blogs</span>
+          <span className="w-fit rounded-md bg-[#1a1443] p-2 px-5 text-xl uppercase text-white">
+            Blog
+          </span>
           <span className="h-[2px] w-24 bg-[#1a1443]"></span>
         </div>
       </div>
@@ -51,4 +53,4 @@ function Blog({ blogs }: BlogProps) {
   )
 }
 
-export default Blog
+export default BlogSection

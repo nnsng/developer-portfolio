@@ -5,8 +5,8 @@ export const contactData: Contact = {
   phone: '(+84) 338 980 207',
   address: 'Thu Duc, Ho Chi Minh, Vietnam',
   github: 'https://github.com/nnsng',
-  facebook: 'https://www.facebook.com/',
+  // facebook: 'https://www.facebook.com/',
   linkedIn: 'https://www.linkedin.com/in/sangngocnguyen',
-  stackOverflow: 'https://stackoverflow.com/',
+  // stackOverflow: 'https://stackoverflow.com/',
   devUsername: 'nguyenngocsang',
 }

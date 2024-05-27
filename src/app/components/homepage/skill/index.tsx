@@ -1,11 +1,11 @@
-import { skillsData } from '@/utils/data/skills'
+import { skillsData } from '@/utils/data/skill'
 import { skillsImage } from '@/utils/skill-image'
 import Image from 'next/image'
 import Marquee from 'react-fast-marquee'
 
-function Skills() {
+function SkillSection() {
   return (
-    <div id="skills" className="relative z-50 my-12 border-t border-[#25213b] lg:my-24">
+    <div id="skill" className="relative z-50 my-12 border-t border-[#25213b] lg:my-24">
       <div className="absolute left-[42%] top-6 h-[100px] w-[100px] translate-x-1/2 rounded-full bg-violet-100 opacity-20 blur-3xl  filter"></div>
 
       <div className="flex -translate-y-[1px] justify-center">
@@ -17,7 +17,9 @@ function Skills() {
       <div className="my-5 flex justify-center lg:py-8">
         <div className="flex  items-center">
           <span className="h-[2px] w-24 bg-[#1a1443]"></span>
-          <span className="w-fit rounded-md bg-[#1a1443] p-2 px-5 text-xl text-white">SKILLS</span>
+          <span className="w-fit rounded-md bg-[#1a1443] p-2 px-5 text-xl uppercase text-white">
+            Skill
+          </span>
           <span className="h-[2px] w-24 bg-[#1a1443]"></span>
         </div>
       </div>
@@ -64,4 +66,4 @@ function Skills() {
   )
 }
 
-export default Skills
+export default SkillSection

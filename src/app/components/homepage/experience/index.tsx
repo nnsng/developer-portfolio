@@ -1,11 +1,11 @@
 import { experiences } from '@/utils/data/experience'
+import experience from '@/utils/lottie/code.json'
 import Image from 'next/image'
 import { BsPersonWorkspace } from 'react-icons/bs'
 import AnimationLottie from '../../helper/animation-lottie'
 import GlowCard from '../../helper/glow-card'
-import experience from '@/utils/lottie/code.json'
 
-function Experience() {
+function ExperienceSection() {
   return (
     <div id="experience" className="relative z-50 my-12 border-t border-[#25213b] lg:my-24">
       <Image
@@ -19,8 +19,8 @@ function Experience() {
       <div className="my-5 flex justify-center lg:py-8">
         <div className="flex  items-center">
           <span className="h-[2px] w-24 bg-[#1a1443]"></span>
-          <span className="w-fit rounded-md bg-[#1a1443] p-2 px-5 text-xl text-white">
-            EXPERIENCES
+          <span className="w-fit rounded-md bg-[#1a1443] p-2 px-5 text-xl uppercase text-white">
+            Experience
           </span>
           <span className="h-[2px] w-24 bg-[#1a1443]"></span>
         </div>
@@ -71,4 +71,4 @@ function Experience() {
   )
 }
 
-export default Experience
+export default ExperienceSection

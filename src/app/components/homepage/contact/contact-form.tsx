@@ -7,6 +7,12 @@ import { useState, type MouseEvent } from 'react'
 import { TbMailForward } from 'react-icons/tb'
 import { toast } from 'react-toastify'
 
+const serviceId = env('NEXT_PUBLIC_EMAILJS_SERVICE_ID')
+const templateId = env('NEXT_PUBLIC_EMAILJS_TEMPLATE_ID')
+const publicKey = env('NEXT_PUBLIC_EMAILJS_PUBLIC_KEY')
+
+const canSubmit = serviceId && templateId && publicKey
+
 function ContactForm() {
   const [input, setInput] = useState({
     name: '',
@@ -26,6 +32,7 @@ function ContactForm() {
 
   const handleSendMail = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
+    if (!canSubmit) return
     if (!input.email || !input.message || !input.name) {
       setError({ ...error, required: true })
       return
@@ -34,13 +41,10 @@ function ContactForm() {
     } else {
       setError({ ...error, required: false })
     }
-
-    const serviceID = env('NEXT_PUBLIC_EMAILJS_SERVICE_ID')
-    const templateID = env('NEXT_PUBLIC_EMAILJS_TEMPLATE_ID')
-    const options = { publicKey: env('NEXT_PUBLIC_EMAILJS_PUBLIC_KEY') }
+    const options = { publicKey }
 
     try {
-      const res = await emailjs.send(serviceID, templateID, input, options)
+      const res = await emailjs.send(serviceId, templateId, input, options)
 
       if (res.status === 200) {
         toast.success('Message sent successfully!')
@@ -56,7 +60,7 @@ function ContactForm() {
   }
 
   return (
-    <div className="">
+    <div>
       <p className="mb-5 text-xl font-medium uppercase text-[#16f2b3]">Contact with me</p>
       <div className="max-w-3xl rounded-lg border border-[#464c6a] p-3 text-white lg:p-5">
         <p className="text-sm text-[#d3d8e8]">
@@ -113,9 +117,10 @@ function ContactForm() {
               <p className="text-sm text-red-400">Email and Message are required!</p>
             )}
             <button
-              className="flex items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-5 py-2.5 text-center text-xs font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:gap-3 hover:text-white hover:no-underline md:px-12 md:py-3 md:text-sm md:font-semibold"
+              className="flex items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-5 py-2.5 text-center text-xs font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:gap-3 hover:text-white hover:no-underline disabled:bg-gray-600 disabled:bg-none disabled:hover:gap-1 md:px-12 md:py-3 md:text-sm md:font-semibold"
               role="button"
               onClick={handleSendMail}
+              disabled={!canSubmit}
             >
               <span>Send Message</span>
               <TbMailForward className="mt-1" size={18} />

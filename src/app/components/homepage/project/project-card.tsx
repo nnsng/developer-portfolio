@@ -44,7 +44,7 @@ function ProjectCard({ project }: ProjectCardProps) {
                 {project.tools.length - 1 !== i && <span className="text-gray-400">{`', '`}</span>}
               </Fragment>
             ))}
-            <span className="text-gray-400">{'],'}</span>
+            <span className="text-gray-400">{`'],`}</span>
           </div>
           <div>
             <span className="ml-4 mr-2 text-white lg:ml-8">myRole:</span>
@@ -52,7 +52,7 @@ function ProjectCard({ project }: ProjectCardProps) {
             <span className="text-gray-400">,</span>
           </div>
           <div className="ml-4 mr-2 lg:ml-8">
-            <span className="text-white">Description:</span>
+            <span className="text-white">description:</span>
             <span className="text-cyan-400">{' ' + project.description}</span>
             <span className="text-gray-400">,</span>
           </div>

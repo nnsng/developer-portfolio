@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 function AboutSection() {
   return (
-    <div id="about" className="relative my-12 lg:my-16">
+    <div id="about" className="relative py-12 lg:py-16">
       <div className="absolute -right-8 top-16 hidden flex-col items-center lg:flex">
-        <span className="w-fit rotate-90 rounded-md bg-[#1a1443] p-2 px-5 text-xl text-white">
-          ABOUT ME
+        <span className="w-fit rotate-90 rounded-md bg-[#1a1443] p-2 px-5 text-xl uppercase text-white">
+          About Me
         </span>
         <span className="h-36 w-[2px] bg-[#1a1443]"></span>
       </div>

@@ -12,7 +12,7 @@ import './css/globals.scss'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: `Portfolio of ${personalData.name.split(' ').at(-1)}`,
+  title: `${personalData.name}'s Portfolio`,
   description: `This is the portfolio of ${personalData.name}. I am a front-end developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.`,
 }
 

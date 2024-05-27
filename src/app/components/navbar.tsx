@@ -2,8 +2,47 @@ import { getBlogData } from '@/services/getBlogData'
 import { personalData } from '@/utils/data/personal'
 import Link from 'next/link'
 
-async function Navbar() {
+const navItems = {
+  about: {
+    id: 'about',
+    name: 'About',
+    enabled: true,
+  },
+  experience: {
+    id: 'experience',
+    name: 'Experience',
+    enabled: true,
+  },
+  skill: {
+    id: 'skill',
+    name: 'Skill',
+    enabled: true,
+  },
+  project: {
+    id: 'project',
+    name: 'Project',
+    enabled: true,
+  },
+  education: {
+    id: 'education',
+    name: 'Education',
+    enabled: true,
+  },
+  blog: {
+    id: 'blog',
+    name: 'Blog',
+    enabled: true,
+  },
+}
+
+const getNavItems = async () => {
   const blogs = await getBlogData()
+  navItems.blog.enabled = blogs.length > 0
+  return navItems
+}
+
+async function Navbar() {
+  const navItems = await getNavItems()
 
   return (
     <nav className="bg-transparent">
@@ -18,68 +57,20 @@ async function Navbar() {
           className="mt-4 flex h-screen max-h-0 w-full flex-col items-start text-sm opacity-0 md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 md:opacity-100"
           id="navbar-default"
         >
-          <li>
-            <a
-              className="block px-4 py-2 no-underline outline-none hover:no-underline"
-              href="#about"
-            >
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                ABOUT
-              </div>
-            </a>
-          </li>
-          <li>
-            <a
-              className="block px-4 py-2 no-underline outline-none hover:no-underline"
-              href="#experience"
-            >
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                EXPERIENCES
-              </div>
-            </a>
-          </li>
-          <li>
-            <a
-              className="block px-4 py-2 no-underline outline-none hover:no-underline"
-              href="#skills"
-            >
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                SKILLS
-              </div>
-            </a>
-          </li>
-          <li>
-            <a
-              className="block px-4 py-2 no-underline outline-none hover:no-underline"
-              href="#education"
-            >
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                EDUCATIONS
-              </div>
-            </a>
-          </li>
-          {blogs.length > 0 && (
-            <li>
-              <a
-                className="block px-4 py-2 no-underline outline-none hover:no-underline"
-                href="#blogs"
-              >
-                <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                  BLOGS
-                </div>
-              </a>
-            </li>
-          )}
-          <li>
-            <a
-              className="block px-4 py-2 no-underline outline-none hover:no-underline"
-              href="#projects"
-            >
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                PROJECTS
-              </div>
-            </a>
-          </li>
+          {Object.values(navItems)
+            .filter((item) => item.enabled)
+            .map((item) => (
+              <li key={item.id}>
+                <a
+                  className="block px-4 py-2 no-underline outline-none hover:no-underline"
+                  href={`#${item.id}`}
+                >
+                  <div className="text-sm uppercase text-white transition-colors duration-300 hover:text-pink-600">
+                    {item.name}
+                  </div>
+                </a>
+              </li>
+            ))}
         </ul>
       </div>
     </nav>

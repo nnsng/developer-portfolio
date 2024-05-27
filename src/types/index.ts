@@ -1,3 +1,5 @@
+import type { IconType } from 'react-icons'
+
 export type Blog = {
   title: string
   description: string
@@ -56,4 +58,10 @@ export type Personal = Contact & {
   description: string
   leetcode?: string
   resume?: string
+}
+
+export type Social = {
+  key: string
+  icon: IconType
+  link?: string
 }
