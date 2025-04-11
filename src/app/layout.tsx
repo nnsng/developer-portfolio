@@ -1,5 +1,6 @@
 import { personalData } from '@/utils/data/personal'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ToastContainer } from 'react-toastify'
 import Footer from './components/footer'
@@ -11,7 +12,7 @@ import './css/globals.scss'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: `${personalData.name}'s Portfolio`,
   description: `This is the portfolio of ${personalData.name}. I am a front-end developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.`,
 }

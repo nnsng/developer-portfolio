@@ -18,8 +18,8 @@ function AboutSection() {
         <div className="order-1 flex justify-center lg:order-2">
           <Image
             src={personalData.profile}
-            width={280}
-            height={280}
+            width={200}
+            height={200}
             alt={personalData.name}
             className="aspect-square w-[unset] cursor-pointer rounded-lg grayscale transition-all duration-1000 hover:scale-110 hover:grayscale-0"
           />
