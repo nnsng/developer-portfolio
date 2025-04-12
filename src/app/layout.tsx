@@ -28,13 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ scrollBehavior: 'smooth' }}>
       <body className={inter.className}>
-        <main className="relative mx-auto min-h-screen px-6 text-white sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem]">
+        <div className="relative mx-auto min-h-screen px-6 text-white sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem]">
           <Navbar />
-          {children}
-        </main>
-
-        <Footer />
-
+          <main>{children}</main>
+          <Footer />
+        </div>
         <ToastContainer />
         <SpeedInsights />
       </body>
