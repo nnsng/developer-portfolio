@@ -21,7 +21,7 @@ export type Project = {
   tags: string[]
   features: string[]
   demo: string
-  image: {
+  image?: {
     src: string
   }
 }

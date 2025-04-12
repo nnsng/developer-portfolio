@@ -7,9 +7,9 @@ import {
   HeroSection,
   ProjectSection,
   SkillSection,
-} from './components/homepage'
+} from '@/components/homepage'
 
-export default async function Home() {
+export default function HomePage() {
   return (
     <>
       <HeroSection />
