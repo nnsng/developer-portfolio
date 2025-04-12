@@ -1,5 +1,5 @@
-import { personalData } from '@/data'
 import { getBlogData } from '@/services/blog-services'
+import { getPersonalData } from '@/services/data'
 import Link from 'next/link'
 
 const navItems = {
@@ -35,14 +35,15 @@ const navItems = {
   },
 }
 
-const getNavItems = async () => {
-  const blogs = await getBlogData()
-  navItems.blog.enabled = blogs.length > 0
+const getNavItems = async (blogEnabled: boolean) => {
+  navItems.blog.enabled = blogEnabled
   return navItems
 }
 
 export async function Navbar() {
-  const navItems = await getNavItems()
+  const personalData = await getPersonalData()
+  const blogs = await getBlogData(personalData.dev)
+  const navItems = await getNavItems(blogs.length > 0)
 
   return (
     <nav className="bg-transparent">

@@ -12,52 +12,50 @@ export type Blog = {
 }
 
 export type Project = {
-  id: number
+  id: string
   name: string
   description: string
   tools: string[]
   role: string
   code: string
-  tags: string[]
-  features: string[]
   demo: string
-  image?: {
-    src: string
-  }
 }
 
 export type Education = {
-  id: number
+  id: string
   title: string
   duration: string
   institution: string
 }
 
 export type Experience = {
-  id: number
+  id: string
   title: string
   company: string
   duration: string
 }
 
-export type Contact = {
-  email: string
-  phone: string
-  address: string
-  github: string
-  facebook?: string
-  linkedIn?: string
-  stackOverflow?: string
-  devUsername?: string
+export type Skill = {
+  id: string
+  name: string
 }
 
-export type Personal = Contact & {
+export type Personal = {
   name: string
   profile: string
   designation: string
   description: string
-  leetcode?: string
-  resume?: string
+  resume: string
+  email: string
+  phone: string
+  address: string
+  github: string
+  linkedIn: string
+  dev: string
+  leetcode: string
+  facebook: string
+  stackOverflow: string
+  skills: string[]
 }
 
 export type Social = {

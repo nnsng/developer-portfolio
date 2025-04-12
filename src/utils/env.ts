@@ -1,16 +1,19 @@
-type Env =
-  | 'NEXT_PUBLIC_EMAILJS_SERVICE_ID'
-  | 'NEXT_PUBLIC_EMAILJS_TEMPLATE_ID'
-  | 'NEXT_PUBLIC_EMAILJS_PUBLIC_KEY'
-  | 'NEXT_PUBLIC_RESUME_URL'
-  | 'NEXT_PUBLIC_EMAIL'
-  | 'NEXT_PUBLIC_PHONE'
-  | 'NEXT_PUBLIC_ADDRESS'
-  | 'NEXT_PUBLIC_GITHUB_USERNAME'
-  | 'NEXT_PUBLIC_LINKEDIN_USERNAME'
-  | 'NEXT_PUBLIC_DEV_USERNAME'
-  | 'NEXT_PUBLIC_LEETCODE_ID'
+import { z } from 'zod'
 
-export const env = (name: Env) => {
-  return process.env[name] || ''
-}
+const envSchema = z.object({
+  NEXT_PUBLIC_EMAILJS_SERVICE_ID: z.string(),
+  NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: z.string(),
+  NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: z.string(),
+
+  NOTION_API_URL: z.string(),
+  NOTION_VERSION: z.string(),
+  NOTION_API_KEY: z.string(),
+
+  NOTION_ABOUT_DATABASE_ID: z.string(),
+  NOTION_EXPERIENCES_DATABASE_ID: z.string(),
+  NOTION_SKILLS_DATABASE_ID: z.string(),
+  NOTION_PROJECTS_DATABASE_ID: z.string(),
+  NOTION_EDUCATIONS_DATABASE_ID: z.string(),
+})
+
+export const env = envSchema.safeParse(process.env).data ?? ({} as z.infer<typeof envSchema>)

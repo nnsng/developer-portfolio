@@ -1,10 +1,12 @@
 import { AnimationLottie, GlowCard } from '@/components/common'
-import { educationData } from '@/data'
+import { getEducationData } from '@/services/data'
 import lottieStudy from '@/utils/lottie/study.json'
 import Image from 'next/image'
 import { BsPersonWorkspace } from 'react-icons/bs'
 
-export function EducationSection() {
+export async function EducationSection() {
+  const educationData = await getEducationData()
+
   return (
     <div id="education" className="relative z-50 my-12 border-t border-[#25213b] lg:my-24">
       <Image

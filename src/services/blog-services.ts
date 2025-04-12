@@ -1,8 +1,7 @@
-import { personalData } from '@/data'
-import type { Blog } from '@/types'
+import type { Blog } from '@/types/data'
 
-export const getBlogData = async () => {
-  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
+export const getBlogData = async (username: string) => {
+  const res = await fetch(`https://dev.to/api/articles?username=${username}`)
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')

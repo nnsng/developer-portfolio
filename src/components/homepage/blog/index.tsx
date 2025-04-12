@@ -1,4 +1,5 @@
 import { getBlogData } from '@/services/blog-services'
+import { getPersonalData } from '@/services/data'
 import Link from 'next/link'
 import { FaArrowRight } from 'react-icons/fa'
 import { BlogCard } from './blog-card'
@@ -6,7 +7,9 @@ import { BlogCard } from './blog-card'
 const MAX_BLOGS = 6
 
 export async function BlogSection() {
-  const blogs = await getBlogData()
+  const personalData = await getPersonalData()
+  const blogs = await getBlogData(personalData.dev)
+
   if (blogs.length === 0) return null
 
   return (

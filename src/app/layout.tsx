@@ -1,5 +1,5 @@
 import { Footer, Navbar } from '@/components/layout'
-import { personalData } from '@/data'
+import { getPersonalData } from '@/services/data'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -12,9 +12,12 @@ const inter = Inter({
   subsets: ['latin'],
 })
 
-export const metadata: Metadata = {
-  title: `${personalData.name}'s Portfolio`,
-  description: `This is the portfolio of ${personalData.name}. I am a front-end developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.`,
+export const generateMetadata = async (): Promise<Metadata> => {
+  const personalData = await getPersonalData()
+  return {
+    title: `${personalData.name} | Portfolio`,
+    description: `This is the portfolio of ${personalData.name}. I am a front-end developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.`,
+  }
 }
 
 export default function RootLayout({

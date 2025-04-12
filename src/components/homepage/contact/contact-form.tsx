@@ -7,9 +7,9 @@ import { useState, type MouseEvent } from 'react'
 import { TbMailForward } from 'react-icons/tb'
 import { toast } from 'react-toastify'
 
-const serviceId = env('NEXT_PUBLIC_EMAILJS_SERVICE_ID')
-const templateId = env('NEXT_PUBLIC_EMAILJS_TEMPLATE_ID')
-const publicKey = env('NEXT_PUBLIC_EMAILJS_PUBLIC_KEY')
+const serviceId = env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+const templateId = env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+const publicKey = env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 
 const canSubmit = serviceId && templateId && publicKey
 

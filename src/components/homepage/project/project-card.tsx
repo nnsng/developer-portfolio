@@ -1,4 +1,5 @@
-import type { Project } from '@/types'
+import type { Project } from '@/types/data'
+import Link from 'next/link'
 import { Fragment } from 'react'
 
 type ProjectCardProps = {
@@ -29,14 +30,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <span className="text-gray-400">{'{'}</span>
           </div>
           <div>
-            <span className="mr-2 ml-4 text-white lg:ml-8">name:</span>
+            <span className="ml-4 text-white lg:ml-8">name: </span>
             <span className="text-gray-400">{`'`}</span>
             <span className="text-amber-300">{project.name}</span>
             <span className="text-gray-400">{`',`}</span>
           </div>
-
-          <div className="mr-2 ml-4 lg:ml-8">
-            <span className="text-white">tools:</span>
+          <div className="ml-4 lg:ml-8">
+            <span className="text-white">description: </span>
+            <span className="text-gray-400">&apos;</span>
+            <span className="text-amber-300">{project.description}</span>
+            <span className="text-gray-400">&apos;,</span>
+          </div>
+          <div className="ml-4 lg:ml-8">
+            <span className="text-white">tools: </span>
             <span className="text-gray-400">{` ['`}</span>
             {project.tools.map((tag, i) => (
               <Fragment key={i}>
@@ -47,15 +53,26 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <span className="text-gray-400">{`'],`}</span>
           </div>
           <div>
-            <span className="mr-2 ml-4 text-white lg:ml-8">myRole:</span>
-            <span className="text-orange-400">{project.role}</span>
-            <span className="text-gray-400">,</span>
+            <span className="ml-4 text-white lg:ml-8">role: </span>
+            <span className="text-gray-400">&apos;</span>
+            <span className="text-amber-300">{project.role}</span>
+            <span className="text-gray-400">&apos;,</span>
           </div>
-          <div className="mr-2 ml-4 lg:ml-8">
-            <span className="text-white">description:</span>
-            <span className="text-cyan-400">{' ' + project.description}</span>
-            <span className="text-gray-400">,</span>
-          </div>
+          {project.demo && (
+            <div className="ml-4 lg:ml-8">
+              <span className="text-white">demo: </span>
+              <span className="text-gray-400">&apos;</span>
+              <Link
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-400 underline"
+              >
+                {project.demo}
+              </Link>
+              <span className="text-gray-400">&apos;,</span>
+            </div>
+          )}
           <div>
             <span className="text-gray-400">{`};`}</span>
           </div>

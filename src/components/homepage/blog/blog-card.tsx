@@ -1,4 +1,4 @@
-import type { Blog } from '@/types'
+import type { Blog } from '@/types/data'
 import { timeConverter } from '@/utils/time'
 import Image from 'next/image'
 import Link from 'next/link'

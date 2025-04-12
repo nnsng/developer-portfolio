@@ -1,7 +1,9 @@
-import { personalData } from '@/data'
+import { getPersonalData } from '@/services/data'
 import Image from 'next/image'
 
-export function AboutSection() {
+export async function AboutSection() {
+  const personalData = await getPersonalData()
+
   return (
     <div id="about" className="relative py-12 lg:py-16">
       <div className="absolute top-16 -right-8 hidden flex-col items-center lg:flex">

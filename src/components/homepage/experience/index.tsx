@@ -1,10 +1,12 @@
 import { AnimationLottie, GlowCard } from '@/components/common'
-import { experienceData } from '@/data'
+import { getExperienceData } from '@/services/data'
 import lottieCode from '@/utils/lottie/code.json'
 import Image from 'next/image'
 import { BsPersonWorkspace } from 'react-icons/bs'
 
-export function ExperienceSection() {
+export async function ExperienceSection() {
+  const experienceData = await getExperienceData()
+
   return (
     <div id="experience" className="relative z-50 my-12 border-t border-[#25213b] lg:my-24">
       <Image

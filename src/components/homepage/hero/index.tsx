@@ -1,4 +1,4 @@
-import { personalData } from '@/data'
+import { getPersonalData } from '@/services/data'
 import Image from 'next/image'
 import Link from 'next/link'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
@@ -8,7 +8,9 @@ import { RiContactsFill } from 'react-icons/ri'
 import { SiLeetcode } from 'react-icons/si'
 import { CoderObject } from './coder-object'
 
-export function HeroSection() {
+export async function HeroSection() {
+  const personalData = await getPersonalData()
+
   return (
     <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
       <Image

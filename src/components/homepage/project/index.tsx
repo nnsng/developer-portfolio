@@ -1,7 +1,9 @@
-import { projectData } from '@/data'
+import { getProjectData } from '@/services/data'
 import { ProjectCard } from './project-card'
 
-export function ProjectSection() {
+export async function ProjectSection() {
+  const projectData = await getProjectData()
+
   return (
     <div id="project" className="relative z-50 my-12 lg:my-24">
       <div className="sticky top-10">

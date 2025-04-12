@@ -1,9 +1,11 @@
-import { skillData } from '@/data'
+import { getSkillData } from '@/services/data'
 import { skillsImage } from '@/utils/skill'
 import Image from 'next/image'
 import Marquee from 'react-fast-marquee'
 
-export function SkillSection() {
+export async function SkillSection() {
+  const skillData = await getSkillData()
+
   return (
     <div id="skill" className="relative z-50 my-12 border-t border-[#25213b] lg:my-24">
       <div className="absolute top-6 left-[42%] h-[100px] w-[100px] translate-x-1/2 rounded-full bg-violet-100 opacity-20 blur-3xl filter"></div>
@@ -34,10 +36,10 @@ export function SkillSection() {
           play={true}
           direction="left"
         >
-          {skillData.map((skill, id) => (
+          {skillData.map((skill) => (
             <div
               className="group relative m-3 flex h-fit w-36 min-w-fit cursor-pointer flex-col items-center justify-center rounded-lg transition-all duration-500 hover:scale-[1.15] sm:m-5"
-              key={id}
+              key={skill.id}
             >
               <div className="h-full w-full rounded-lg border border-[#1f223c] bg-[#11152c] shadow-none shadow-gray-50 transition-all duration-500 group-hover:border-violet-500">
                 <div className="flex -translate-y-[1px] justify-center">
@@ -48,14 +50,14 @@ export function SkillSection() {
                 <div className="flex flex-col items-center justify-center gap-3 p-6">
                   <div className="h-8 sm:h-10">
                     <Image
-                      src={skillsImage(skill)?.src}
-                      alt={skill}
+                      src={skillsImage(skill.name)?.src}
+                      alt={skill.name}
                       width={40}
                       height={40}
                       className="h-full w-auto rounded-lg"
                     />
                   </div>
-                  <p className="text-sm text-white sm:text-lg">{skill}</p>
+                  <p className="text-sm text-white sm:text-lg">{skill.name}</p>
                 </div>
               </div>
             </div>

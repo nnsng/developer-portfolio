@@ -1,9 +1,9 @@
-import { personalData } from '@/data'
+import { getPersonalData } from '@/services/data'
 import { Fragment } from 'react'
 
-const skills = ['HTML', 'CSS', 'Javascript', 'Typescript', 'React', 'Redux', 'Express', 'Git']
+export async function CoderObject() {
+  const personalData = await getPersonalData()
 
-export function CoderObject() {
   return (
     <div className="relative order-1 rounded-lg border border-[#1b2c68a0] bg-gradient-to-r from-[#0d1224] to-[#0a0d37] lg:order-2">
       <div className="flex flex-row">
@@ -34,7 +34,7 @@ export function CoderObject() {
           <div className="mr-2 ml-4 lg:ml-8">
             <span className="text-white">skills:</span>
             <span className="text-gray-400">{`['`}</span>
-            {skills.map((skill, idx) => (
+            {personalData.skills.map((skill, idx) => (
               <Fragment key={idx}>
                 {idx > 0 && <span className="text-gray-400">{"', '"}</span>}
                 <span className="text-amber-300">{skill}</span>
