@@ -1,6 +1,6 @@
+import lottieExperience from '@/assets/lottie/experience.json'
 import { AnimationLottie, GlowCard } from '@/components/common'
 import { getExperienceData } from '@/services/data'
-import lottieCode from '@/utils/lottie/code.json'
 import Image from 'next/image'
 import { BsPersonWorkspace } from 'react-icons/bs'
 
@@ -31,7 +31,7 @@ export async function ExperienceSection() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
           <div className="flex items-start justify-center">
             <div className="flex h-full w-full">
-              <AnimationLottie animationData={lottieCode} />
+              <AnimationLottie animationData={lottieExperience} />
             </div>
           </div>
 
