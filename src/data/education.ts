@@ -1,6 +1,6 @@
 import type { Education } from '@/types'
 
-export const educations: Education[] = [
+export const educationData: Education[] = [
   {
     id: 1,
     title: 'Bachelor of Computer Engineering Technology',

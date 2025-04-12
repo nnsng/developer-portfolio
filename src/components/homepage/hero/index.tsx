@@ -1,4 +1,4 @@
-import { personalData } from '@/data/personal'
+import { personalData } from '@/data'
 import Image from 'next/image'
 import Link from 'next/link'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'

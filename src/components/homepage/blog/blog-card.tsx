@@ -46,7 +46,7 @@ export function BlogCard({ blog }: BlogCardProps) {
         <p className="line-clamp-3 pb-3 text-sm text-[#d3d8e8] lg:pb-6 lg:text-base">
           {blog.description}
         </p>
-        <div className="">
+        <div>
           <Link target="_blank" href={blog.url}>
             <button className="rounded-full bg-violet-500 px-3 py-1.5 text-xs text-white">
               Read More

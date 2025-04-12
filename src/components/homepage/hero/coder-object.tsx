@@ -1,4 +1,4 @@
-import { personalData } from '@/data/personal'
+import { personalData } from '@/data'
 import { Fragment } from 'react'
 
 const skills = ['HTML', 'CSS', 'Javascript', 'Typescript', 'React', 'Redux', 'Express', 'Git']

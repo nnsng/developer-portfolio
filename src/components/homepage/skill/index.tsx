@@ -1,4 +1,4 @@
-import { skillsData } from '@/data/skill'
+import { skillData } from '@/data'
 import { skillsImage } from '@/utils/skill'
 import Image from 'next/image'
 import Marquee from 'react-fast-marquee'
@@ -34,7 +34,7 @@ export function SkillSection() {
           play={true}
           direction="left"
         >
-          {skillsData.map((skill, id) => (
+          {skillData.map((skill, id) => (
             <div
               className="group relative m-3 flex h-fit w-36 min-w-fit cursor-pointer flex-col items-center justify-center rounded-lg transition-all duration-500 hover:scale-[1.15] sm:m-5"
               key={id}

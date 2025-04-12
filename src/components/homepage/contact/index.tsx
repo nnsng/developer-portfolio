@@ -1,4 +1,4 @@
-import { personalData } from '@/data/personal'
+import { personalData } from '@/data'
 import type { Social } from '@/types'
 import Link from 'next/link'
 import { BiLogoLinkedin } from 'react-icons/bi'

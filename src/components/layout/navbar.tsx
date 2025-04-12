@@ -1,4 +1,4 @@
-import { personalData } from '@/data/personal'
+import { personalData } from '@/data'
 import { getBlogData } from '@/services/blog-services'
 import Link from 'next/link'
 

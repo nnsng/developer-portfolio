@@ -1,5 +1,5 @@
 import { AnimationLottie, GlowCard } from '@/components/common'
-import { experiences } from '@/data/experience'
+import { experienceData } from '@/data'
 import lottieCode from '@/utils/lottie/code.json'
 import Image from 'next/image'
 import { BsPersonWorkspace } from 'react-icons/bs'
@@ -35,7 +35,7 @@ export function ExperienceSection() {
 
           <div>
             <div className="flex h-full flex-col justify-center gap-6">
-              {experiences.map((experience) => (
+              {experienceData.map((experience) => (
                 <GlowCard key={experience.id} identifier={`experience-${experience.id}`}>
                   <div className="relative p-3">
                     <Image

@@ -1,4 +1,4 @@
-import { personalData } from '@/data/personal'
+import { personalData } from '@/data'
 import type { Blog } from '@/types'
 
 export const getBlogData = async () => {

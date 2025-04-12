@@ -1,6 +1,6 @@
 import type { Project } from '@/types'
 
-export const projectsData: Project[] = [
+export const projectData: Project[] = [
   {
     id: 1,
     name: '1social.',

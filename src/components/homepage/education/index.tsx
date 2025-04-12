@@ -1,5 +1,5 @@
 import { AnimationLottie, GlowCard } from '@/components/common'
-import { educations } from '@/data/educations'
+import { educationData } from '@/data'
 import lottieStudy from '@/utils/lottie/study.json'
 import Image from 'next/image'
 import { BsPersonWorkspace } from 'react-icons/bs'
@@ -40,7 +40,7 @@ export function EducationSection() {
 
           <div>
             <div className="flex h-full flex-col justify-center gap-6">
-              {educations.map((education) => (
+              {educationData.map((education) => (
                 <GlowCard key={education.id} identifier={`education-${education.id}`}>
                   <div className="relative p-3 text-white">
                     <Image
