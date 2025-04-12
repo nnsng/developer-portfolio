@@ -72,7 +72,7 @@ export function HeroSection() {
               href="#contact"
               className="rounded-full bg-gradient-to-r from-violet-600 to-pink-500 p-[1px] transition-all duration-300 hover:from-pink-500 hover:to-violet-600"
             >
-              <button className="flex items-center gap-1 rounded-full border-none bg-[#0d1224] px-3 py-3 text-center text-xs font-medium tracking-wider text-[#ffff] uppercase no-underline transition-all duration-200 ease-out hover:gap-3 md:px-8 md:py-4 md:text-sm md:font-semibold">
+              <button className="flex cursor-pointer items-center gap-1 rounded-full border-none bg-[#0d1224] px-3 py-3 text-center text-xs font-medium tracking-wider text-[#ffff] uppercase no-underline transition-all duration-200 ease-out hover:gap-3 md:px-8 md:py-4 md:text-sm md:font-semibold">
                 <span>Contact me</span>
                 <RiContactsFill size={16} />
               </button>

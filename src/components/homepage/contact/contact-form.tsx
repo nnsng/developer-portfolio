@@ -54,8 +54,8 @@ export function ContactForm() {
           message: '',
         })
       }
-    } catch (error: any) {
-      toast.error(error?.text || error)
+    } catch (error) {
+      toast.error(String(error))
     }
   }
 

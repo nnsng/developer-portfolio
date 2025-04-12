@@ -1,6 +1,9 @@
 'use client'
 
-import Lottie, { type LottieComponentProps } from 'lottie-react'
+import { type LottieComponentProps } from 'lottie-react'
+import dynamic from 'next/dynamic'
+
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 type AnimationLottieProps = {
   animationData: LottieComponentProps['animationData']

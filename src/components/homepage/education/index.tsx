@@ -1,6 +1,6 @@
 import { AnimationLottie, GlowCard } from '@/components/common'
 import { educations } from '@/data/educations'
-import { lottieAnimation } from '@/utils/lottie'
+import lottieStudy from '@/utils/lottie/study.json'
 import Image from 'next/image'
 import { BsPersonWorkspace } from 'react-icons/bs'
 
@@ -34,7 +34,7 @@ export function EducationSection() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
           <div className="flex items-start justify-center">
             <div className="flex h-full w-3/4">
-              <AnimationLottie animationData={lottieAnimation.study} />
+              <AnimationLottie animationData={lottieStudy} />
             </div>
           </div>
 
