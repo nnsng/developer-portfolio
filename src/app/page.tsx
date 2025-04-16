@@ -9,6 +9,8 @@ import {
   SkillSection,
 } from '@/components/homepage'
 
+export const revalidate = 60
+
 export default function HomePage() {
   return (
     <>
