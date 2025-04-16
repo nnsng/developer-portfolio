@@ -67,6 +67,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-cyan-400 underline"
+                aria-label="Project demo"
               >
                 {project.demo}
               </Link>

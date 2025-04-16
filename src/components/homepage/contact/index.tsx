@@ -1,43 +1,14 @@
 import { getPersonalData } from '@/services/data'
-import type { Social } from '@/types/data'
+import { getSocialLinks } from '@/utils/social'
 import Link from 'next/link'
-import { BiLogoLinkedin } from 'react-icons/bi'
 import { CiLocationOn } from 'react-icons/ci'
-import { FaDev, FaFacebook, FaStackOverflow } from 'react-icons/fa'
-import { IoLogoGithub, IoMdCall } from 'react-icons/io'
+import { IoMdCall } from 'react-icons/io'
 import { MdAlternateEmail } from 'react-icons/md'
 import { ContactForm } from './contact-form'
 
 export async function ContactSection() {
   const personalData = await getPersonalData()
-
-  const SOCIALS: Social[] = [
-    {
-      key: 'github',
-      icon: IoLogoGithub,
-      link: personalData.github,
-    },
-    {
-      key: 'linkedIn',
-      icon: BiLogoLinkedin,
-      link: personalData.linkedIn,
-    },
-    {
-      key: 'devTo',
-      icon: FaDev,
-      link: `https://dev.to/${personalData.dev}`,
-    },
-    {
-      key: 'stackOverflow',
-      icon: FaStackOverflow,
-      link: personalData.stackOverflow,
-    },
-    {
-      key: 'facebook',
-      icon: FaFacebook,
-      link: personalData.facebook,
-    },
-  ]
+  const socials = getSocialLinks(personalData, ['github', 'linkedIn', 'dev', 'facebook'])
 
   return (
     <div id="contact" className="relative my-12 mt-24 text-white lg:my-16">
@@ -75,8 +46,8 @@ export async function ContactSection() {
             </p>
           </div>
           <div className="mt-8 flex items-center gap-5 lg:mt-16 lg:gap-10">
-            {SOCIALS.filter((social) => !!social.link).map(({ key, link, icon: Icon }) => (
-              <Link key={key} target="_blank" href={link!}>
+            {socials.map(({ key, link, icon: Icon }) => (
+              <Link key={key} target="_blank" href={link} aria-label="Social link">
                 <Icon
                   className="cursor-pointer rounded-full bg-[#8b98a5] p-3 text-gray-800 transition-all duration-300 hover:scale-110 hover:bg-[#16f2b3]"
                   size={48}

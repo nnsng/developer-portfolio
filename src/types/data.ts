@@ -58,8 +58,13 @@ export type Personal = {
   skills: string[]
 }
 
+export type SocialKey = Extract<
+  keyof Personal,
+  'github' | 'linkedIn' | 'dev' | 'leetcode' | 'stackOverflow' | 'facebook'
+>
+
 export type Social = {
-  key: string
+  key: SocialKey
   icon: IconType
-  link?: string
+  link: string
 }

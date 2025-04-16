@@ -43,8 +43,9 @@ export async function BlogSection() {
           <Link
             className="flex items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 py-3 text-center text-xs font-medium tracking-wider text-white uppercase no-underline transition-all duration-200 ease-out hover:gap-3 hover:text-white hover:no-underline md:px-8 md:py-4 md:text-sm md:font-semibold"
             role="button"
-            href="https://dev.to/said7388"
+            href={`https://dev.to/${personalData.dev}`}
             target="_blank"
+            aria-label="View More"
           >
             <span>View More</span>
             <FaArrowRight size={16} />

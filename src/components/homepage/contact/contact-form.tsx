@@ -72,6 +72,7 @@ export function ContactForm() {
             <input
               className="w-full rounded-md border border-[#353a52] bg-[#10172d] px-3 py-2 ring-0 outline-0 transition-all duration-300 focus:border-[#16f2b3]"
               maxLength={50}
+              aria-label="Name"
               {...register('name')}
             />
             {errors.name?.message && <p className="text-sm text-red-400">{errors.name.message}</p>}
@@ -81,6 +82,7 @@ export function ContactForm() {
             <label className="text-base">Email</label>
             <input
               className="w-full rounded-md border border-[#353a52] bg-[#10172d] px-3 py-2 ring-0 outline-0 transition-all duration-300 focus:border-[#16f2b3]"
+              aria-label="Email"
               {...register('email')}
             />
             {errors.email?.message && (
@@ -94,6 +96,7 @@ export function ContactForm() {
               className="w-full rounded-md border border-[#353a52] bg-[#10172d] px-3 py-2 ring-0 outline-0 transition-all duration-300 focus:border-[#16f2b3]"
               maxLength={500}
               rows={4}
+              aria-label="Message"
               {...register('message')}
             />
             {errors.message?.message && (
@@ -108,7 +111,7 @@ export function ContactForm() {
             disabled={isSubmitting}
           >
             <span>Send Message</span>
-            <TbMailForward className="mt-1" size={18} />
+            <TbMailForward size={18} />
           </button>
         </div>
       </div>

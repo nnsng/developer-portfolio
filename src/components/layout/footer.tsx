@@ -16,6 +16,7 @@ export function Footer() {
               target="_blank"
               href="https://www.linkedin.com/in/abu-said-bd/"
               className="text-[#16f2b3]"
+              aria-label="author"
             >
               Abu Said
             </Link>
@@ -25,6 +26,7 @@ export function Footer() {
               target="_blank"
               href="https://github.com/said7388/developer-portfolio"
               className="flex items-center gap-2 uppercase hover:text-[#16f2b3]"
+              aria-label="star repository"
             >
               <IoStar />
               <span>Star</span>
@@ -33,6 +35,7 @@ export function Footer() {
               target="_blank"
               href="https://github.com/said7388/developer-portfolio/fork"
               className="flex items-center gap-2 uppercase hover:text-[#16f2b3]"
+              aria-label="fork repository"
             >
               <CgGitFork />
               <span>Fork</span>

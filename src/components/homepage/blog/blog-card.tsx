@@ -37,7 +37,7 @@ export function BlogCard({ blog }: BlogCardProps) {
             )}
           </div>
         </div>
-        <Link target="_blank" href={blog.url}>
+        <Link target="_blank" href={blog.url} aria-label={blog.title}>
           <p className="my-2 cursor-pointer text-lg font-medium text-white hover:text-violet-500 sm:text-xl lg:my-3">
             {blog.title}
           </p>
@@ -47,7 +47,7 @@ export function BlogCard({ blog }: BlogCardProps) {
           {blog.description}
         </p>
         <div>
-          <Link target="_blank" href={blog.url}>
+          <Link target="_blank" href={blog.url} aria-label="Read More">
             <button className="rounded-full bg-violet-500 px-3 py-1.5 text-xs text-white">
               Read More
             </button>

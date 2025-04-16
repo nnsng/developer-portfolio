@@ -1,5 +1,11 @@
 @import 'tailwindcss';
 
+@layer base {
+  button {
+    @apply cursor-pointer;
+  }
+}
+
 :root {
   --foreground-rgb: rgb(211, 216, 232);
 }

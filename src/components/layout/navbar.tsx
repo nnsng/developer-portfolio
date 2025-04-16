@@ -49,7 +49,7 @@ export async function Navbar() {
     <nav className="bg-transparent">
       <div className="flex items-center justify-between py-5">
         <div className="flex flex-shrink-0 items-center">
-          <Link href="/" className="text-3xl font-bold text-[#16f2b3]">
+          <Link href="/" className="text-3xl font-bold text-[#16f2b3]" aria-label="Home">
             {personalData.name.toUpperCase()}
           </Link>
         </div>
